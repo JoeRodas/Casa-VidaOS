@@ -12,6 +12,7 @@ struct ChessboardView: View {
             Text("Life OS Chessboard")
                 .font(.largeTitle)
                 .padding(.bottom)
+
     @StateObject private var viewModel = ChessboardViewModel()
 
     var body: some View {
@@ -46,6 +47,7 @@ struct ChessboardView: View {
                                         .foregroundColor(.yellow)
                                         .offset(x: 10, y: 10)
                                 )
+
                                 .background(Color.blue)
                                 .clipShape(Circle())
                         }
