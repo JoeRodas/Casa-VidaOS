@@ -37,6 +37,10 @@ enum Archetype: String, CaseIterable {
 ## Wireframes
 Wireframe images should be placed in `docs/wireframes/`. They illustrate the chessboard layout and the archetype selector carousel.
 
+## Features Implemented
+- Persistent storage using SwiftData.
+- Chaos Engine scheduling random events.
+- Weekly progress reports that can be shared.
 ## Future Work
 - Add data persistence with SwiftData.
 - Implement a Chaos Engine that schedules random events.

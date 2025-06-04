@@ -9,6 +9,9 @@ Casa-VidaOS is an experimental Life Operating System for iOS built using Swift a
 - Chaos Engine introducing random events
 - Archetype selector representing different play styles
 - Journal for morning and evening reflection
+- Persistent storage powered by SwiftData
+- Shareable weekly progress reports
+
 
 ## Project Structure
 ```
@@ -17,6 +20,7 @@ Casa-VidaOS/
 ├── docs/
 │   ├── DESIGN.md
 │   ├── SCALING.md
+
 
 │   └── wireframes/
 └── LifeOSApp/
@@ -30,6 +34,8 @@ Casa-VidaOS/
 ## Getting Started
 1. Open `LifeOSApp` as an Xcode project or integrate these files into a new SwiftUI project.
 2. Build and run the app on iOS 17 or later.
+3. Use the "Weekly Report" link in the main interface to generate and share progress summaries.
+
 
 ## Building
 This repository only includes Swift source files. Create an Xcode project named **LifeOSApp** and add the contents of `LifeOSApp/`. Ensure SwiftData/CoreData capability is enabled for persistence.
