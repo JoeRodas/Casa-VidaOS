@@ -33,3 +33,12 @@ enum Archetype: String, CaseIterable, Identifiable {
         }
     }
 }
+
+struct LifeBoardTile: Identifiable {
+    let id = UUID()
+    let row: Int
+    let col: Int
+    var piece: LifePiece?
+    var statusEffect: String?
+}
+

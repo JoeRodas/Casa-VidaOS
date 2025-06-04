@@ -25,6 +25,17 @@ class ChessboardViewModel: ObservableObject {
             tiles[piece.position.0][piece.position.1].piece = piece
         }
     }
+
+    func move(_ piece: LifePiece, to newPos: (Int, Int)) {
+        guard (0..<8).contains(newPos.0), (0..<8).contains(newPos.1) else { return }
+        guard let idx = pieces.firstIndex(where: { $0.id == piece.id }) else { return }
+
+        tiles[pieces[idx].position.0][pieces[idx].position.1].piece = nil
+        pieces[idx].position = newPos
+        tiles[newPos.0][newPos.1].piece = pieces[idx]
+    }
+}
+
 }
 
 struct LifeBoardTile: Identifiable {
