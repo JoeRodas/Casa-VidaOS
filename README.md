@@ -17,6 +17,7 @@ Casa-VidaOS/
 ├── docs/
 │   ├── DESIGN.md
 │   ├── SCALING.md
+
 │   └── wireframes/
 └── LifeOSApp/
     ├── Models/
@@ -34,6 +35,7 @@ Casa-VidaOS/
 This repository only includes Swift source files. Create an Xcode project named **LifeOSApp** and add the contents of `LifeOSApp/`. Ensure SwiftData/CoreData capability is enabled for persistence.
 
 For backend deployment and scaling guidance, see `docs/SCALING.md`.
+
 
 ## License
 MIT

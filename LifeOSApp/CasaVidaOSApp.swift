@@ -10,6 +10,7 @@ struct CasaVidaOSApp: App {
                 VStack {
                     ArchetypeSelectorView(selected: $archetype)
                     ChessboardView(archetype: $archetype)
+                    ChessboardView()
                 }
                 .navigationTitle("Casa-VidaOS")
             }
