@@ -25,6 +25,10 @@ struct CasaVidaOSApp: App {
                 }
             }
             .modelContainer(DataController.shared.container)
+                    ChessboardView()
+                }
+                .navigationTitle("Casa-VidaOS")
+            }
         }
     }
 }
