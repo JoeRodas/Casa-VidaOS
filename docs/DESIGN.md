@@ -41,6 +41,7 @@ Wireframe images should be placed in `docs/wireframes/`. They illustrate the che
 - Persistent storage using SwiftData.
 - Chaos Engine scheduling random events.
 - Weekly progress reports that can be shared.
+
 ## Future Work
 - Add data persistence with SwiftData.
 - Implement a Chaos Engine that schedules random events.

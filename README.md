@@ -21,7 +21,6 @@ Casa-VidaOS/
 │   ├── DESIGN.md
 │   ├── SCALING.md
 
-
 │   └── wireframes/
 └── LifeOSApp/
     ├── Models/

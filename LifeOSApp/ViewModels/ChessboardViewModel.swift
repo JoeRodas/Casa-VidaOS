@@ -38,6 +38,7 @@ class ChessboardViewModel: ObservableObject {
             }
             try? context.save()
         }
+
         pieces = [
             LifePiece(id: UUID(), type: .king, domain: "Virtue", position: (0,4), progressLevel: 5),
             LifePiece(id: UUID(), type: .queen, domain: "Time", position: (0,3), progressLevel: 7)
@@ -64,6 +65,7 @@ class ChessboardViewModel: ObservableObject {
     }
 }
 
+\
 
     }
 }
