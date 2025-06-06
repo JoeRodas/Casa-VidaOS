@@ -1,4 +1,5 @@
 import Foundation
+import SwiftUI
 
 enum LifePieceType: String, CaseIterable, Identifiable {
     case king, queen, rook, bishop, knight, pawn
@@ -40,3 +41,4 @@ struct LifeBoardTile: Identifiable {
     var piece: LifePiece?
     var statusEffect: String?
 }
+
