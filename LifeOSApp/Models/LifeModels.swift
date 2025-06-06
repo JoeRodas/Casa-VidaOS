@@ -41,4 +41,3 @@ struct LifeBoardTile: Identifiable {
     var piece: LifePiece?
     var statusEffect: String?
 }
-

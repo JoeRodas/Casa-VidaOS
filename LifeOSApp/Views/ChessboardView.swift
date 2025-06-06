@@ -48,6 +48,7 @@ struct ChessboardView: View {
                                         .offset(x: 10, y: 10)
                                 )
 
+
                                 .background(Color.blue)
                                 .clipShape(Circle())
                         }

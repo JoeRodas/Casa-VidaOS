@@ -11,6 +11,7 @@ Casa-VidaOS is an experimental Life Operating System for iOS built using Swift a
 - Journal for morning and evening reflection
 - Persistent storage powered by SwiftData
 - Shareable weekly progress reports
+- Daily journal entries saved locally and syncable to the backend
 
 
 ## Project Structure
@@ -20,8 +21,6 @@ Casa-VidaOS/
 ├── docs/
 │   ├── DESIGN.md
 │   ├── SCALING.md
-
-
 │   └── wireframes/
 └── LifeOSApp/
     ├── Models/

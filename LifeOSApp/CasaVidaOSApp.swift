@@ -15,6 +15,10 @@ struct CasaVidaOSApp: App {
                     NavigationLink("Weekly Report") {
                         WeeklyReportView()
                     }
+                    NavigationLink("Journal") {
+                        JournalView()
+                    }
+
                 }
                 .navigationTitle("Casa-VidaOS")
                 .onAppear {
