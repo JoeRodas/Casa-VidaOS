@@ -1,0 +1,3 @@
+Archetype Selector Wireframe
+[Franklin] [daVinci] [Tesla] [Aurelius] [Musashi]
+Horizontal scroll with portrait and "Select" button on each card.
