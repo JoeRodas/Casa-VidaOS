@@ -18,6 +18,7 @@ struct CasaVidaOSApp: App {
                     NavigationLink("Journal") {
                         JournalView()
                     }
+
                 }
                 .navigationTitle("Casa-VidaOS")
                 .onAppear {
@@ -28,6 +29,10 @@ struct CasaVidaOSApp: App {
                 }
             }
             .modelContainer(DataController.shared.container)
+                    ChessboardView()
+                }
+                .navigationTitle("Casa-VidaOS")
+            }
         }
     }
 }
