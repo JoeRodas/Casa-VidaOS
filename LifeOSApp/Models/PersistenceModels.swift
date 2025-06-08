@@ -49,3 +49,4 @@ class JournalEntry {
         self.eveningText = eveningText
     }
 }
+
