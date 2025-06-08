@@ -1,3 +1,8 @@
+#if canImport(SwiftUI)
+import SwiftUI
+#endif
+
+#if canImport(SwiftUI)
 import SwiftUI
 
 struct ArchetypeSelectorView: View {
@@ -25,6 +30,9 @@ struct ArchetypeSelectorView: View {
             .padding()
         }
     }
+#endif
+
+#if canImport(SwiftUI)
 }
 
 #Preview {
@@ -37,3 +45,5 @@ private struct StateWrapper: View {
         ArchetypeSelectorView(selected: $selected)
     }
 }
+#endif
+

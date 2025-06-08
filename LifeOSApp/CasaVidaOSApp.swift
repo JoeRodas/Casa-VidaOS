@@ -1,3 +1,13 @@
+#if canImport(SwiftUI)
+import SwiftUI
+#else
+#error("SwiftUI is required to build CasaVidaOSApp")
+#endif
+
+#if canImport(SwiftData)
+import SwiftData
+#endif
+
 import SwiftUI
 import SwiftData
 
@@ -15,6 +25,9 @@ struct CasaVidaOSApp: App {
                     NavigationLink("Weekly Report") {
                         WeeklyReportView()
                     }
+                    NavigationLink("Journal") {
+                        JournalView()
+                    }
                 }
                 .navigationTitle("Casa-VidaOS")
                 .onAppear {
@@ -24,6 +37,10 @@ struct CasaVidaOSApp: App {
                     chaosEngine.stop()
                 }
             }
+#if canImport(SwiftData)
+            .modelContainer(DataController.shared.container)
+#endif
+
             .modelContainer(DataController.shared.container)
                     ChessboardView()
                 }

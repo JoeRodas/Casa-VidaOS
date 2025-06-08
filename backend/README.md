@@ -3,6 +3,8 @@
 This Node.js service provides user management endpoints for Casa-VidaOS.
 It demonstrates a scalable pattern using PostgreSQL for persistent storage
 and Redis as a caching layer. Deploy multiple instances behind a load
+balancer for horizontal scaling. The service now also accepts journal
+entries from the app.
 balancer for horizontal scaling.
 
 ## Setup

@@ -1,3 +1,8 @@
+#if canImport(SwiftUI)
+import SwiftUI
+#endif
+
+#if canImport(SwiftUI)
 import SwiftUI
 
 struct ChessboardView: View {
@@ -12,6 +17,7 @@ struct ChessboardView: View {
             Text("Life OS Chessboard")
                 .font(.largeTitle)
                 .padding(.bottom)
+
 
     @StateObject private var viewModel = ChessboardViewModel()
 
@@ -57,6 +63,9 @@ struct ChessboardView: View {
         }
         .padding()
     }
+#endif
+
+#if canImport(SwiftUI)
 }
 
 #Preview {
@@ -68,6 +77,8 @@ private struct StateWrapper: View {
     var body: some View {
         ChessboardView(archetype: $archetype)
     }
+}
+#endif
 
     ChessboardView()
 }
