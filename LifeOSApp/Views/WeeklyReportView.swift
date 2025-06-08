@@ -3,6 +3,8 @@ import SwiftUI
 #endif
 
 #if canImport(SwiftUI)
+import SwiftUI
+
 struct WeeklyReportView: View {
     @StateObject private var viewModel = WeeklyReportViewModel()
     @State private var shareSheet: Bool = false
@@ -30,6 +32,9 @@ struct WeeklyReportView: View {
 #endif
 
 #if canImport(SwiftUI)
+
+}
+
 struct ActivityView: UIViewControllerRepresentable {
     let activityItems: [Any]
     func makeUIViewController(context: Context) -> UIActivityViewController {

@@ -14,6 +14,7 @@ Casa-VidaOS is an experimental Life Operating System for iOS built using Swift a
 - Daily journal entries saved locally and syncable to the backend
 - Machine learning quiz for archetype recommendations
 
+
 ## Project Structure
 ```
 Casa-VidaOS/
@@ -41,6 +42,13 @@ This repository only includes Swift source files. Create an Xcode project named 
 For the quiz model training instructions, see `docs/ML.md`.
 
 For backend deployment and scaling guidance, see `docs/SCALING.md`.
+
+
+## Building
+This repository only includes Swift source files. Create an Xcode project named **LifeOSApp** and add the contents of `LifeOSApp/`. Ensure SwiftData/CoreData capability is enabled for persistence.
+
+For backend deployment and scaling guidance, see `docs/SCALING.md`.
+
 
 ## License
 MIT

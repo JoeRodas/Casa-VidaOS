@@ -1,5 +1,6 @@
 import Foundation
 #if canImport(SwiftUI) && canImport(SwiftData)
+
 import SwiftUI
 import SwiftData
 
@@ -17,6 +18,12 @@ class ChaosEngine: ObservableObject {
 #else
     init() {}
 #endif
+    private let context: ModelContext
+    private var timer: Timer?
+
+    init(context: ModelContext = DataController.shared.container.mainContext) {
+        self.context = context
+    }
 
     func start() {
         timer?.invalidate()
@@ -44,3 +51,8 @@ class ChaosEngine: ObservableObject {
     }
 }
 #endif
+        let event = ChaosEvent(text: events.randomElement()!)
+        context.insert(event)
+        try? context.save()
+    }
+}

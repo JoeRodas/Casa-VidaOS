@@ -14,6 +14,12 @@ struct PersonaQuizView: View {
         QuizQuestion(text: "How do you start your day?", options: [.franklin, .aurelius, .musashi]),
         QuizQuestion(text: "Preferred focus?", options: [.daVinci, .tesla, .franklin]),
         QuizQuestion(text: "Approach to challenges?", options: [.musashi, .aurelius, .tesla])
+
+    @State private var scores: [Archetype:Int] = [:]
+
+    private let questions: [QuizQuestion] = [
+        QuizQuestion(text: "How do you start your day?", options: [.franklin, .aurelius, .musashi]),
+        QuizQuestion(text: "Preferred focus?", options: [.daVinci, .tesla, .franklin])
     ]
 
     var body: some View {
@@ -24,6 +30,9 @@ struct PersonaQuizView: View {
                 ForEach(Array(questions[index].options.enumerated()), id: \ .offset) { idx, archetype in
                     Button(archetype.rawValue.capitalized) {
                         answers.append(Double(idx))
+                ForEach(questions[index].options, id: \..self) { archetype in
+                    Button(archetype.rawValue.capitalized) {
+                        scores[archetype, default: 0] += 1
                         index += 1
                     }
                     .buttonStyle(.bordered)
@@ -33,6 +42,8 @@ struct PersonaQuizView: View {
                 if answers.count == 3 {
                     let result = predictor.predict(features: answers)
                     Text("You match \(result.rawValue.capitalized)")
+                if let best = scores.max(by: { $0.value < $1.value })?.key {
+                    Text("You match \(best.rawValue.capitalized)")
                         .font(.title2)
                 } else {
                     Text("Quiz complete")
@@ -47,3 +58,4 @@ struct PersonaQuizView: View {
     PersonaQuizView()
 }
 #endif
+

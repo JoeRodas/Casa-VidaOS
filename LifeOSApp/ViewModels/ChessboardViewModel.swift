@@ -7,6 +7,10 @@ import SwiftData
 #endif
 
 #if canImport(SwiftUI)
+import SwiftUI
+import SwiftData
+
+
 class ChessboardViewModel: ObservableObject {
     @Published var tiles: [[LifeBoardTile]] = []
     @Published var pieces: [LifePiece] = []
@@ -24,6 +28,10 @@ class ChessboardViewModel: ObservableObject {
     }
 #endif
 
+    init() {
+        setupBoard()
+    }
+
     func setupBoard() {
         tiles = (0..<8).map { row in
             (0..<8).map { col in
@@ -32,6 +40,7 @@ class ChessboardViewModel: ObservableObject {
         }
 
         #if canImport(SwiftData)
+
         if let storedPieces = try? context.fetch(FetchDescriptor<LifePieceState>()), !storedPieces.isEmpty {
             pieces = storedPieces.map { state in
                 LifePiece(id: state.id, type: LifePieceType(rawValue: state.type) ?? .pawn, domain: state.domain, position: (state.row, state.col), progressLevel: state.progressLevel)
@@ -62,6 +71,10 @@ class ChessboardViewModel: ObservableObject {
             tiles[piece.position.0][piece.position.1].piece = piece
         }
         #endif
+
+        for piece in pieces {
+            tiles[piece.position.0][piece.position.1].piece = piece
+        }
     }
 
     func move(_ piece: LifePiece, to newPos: (Int, Int)) {
@@ -99,3 +112,18 @@ class ChessboardViewModel {
 }
 #endif
 
+    }
+}
+
+
+    }
+}
+
+}
+
+struct LifeBoardTile: Identifiable {
+    let id = UUID()
+    let row: Int
+    let col: Int
+    var piece: LifePiece?
+}
