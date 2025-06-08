@@ -4,6 +4,8 @@ import SwiftData
 #endif
 
 #if canImport(SwiftData)
+import SwiftData
+
 @MainActor
 class DataController {
     static let shared = DataController()

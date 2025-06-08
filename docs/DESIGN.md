@@ -42,6 +42,10 @@ Wireframe images should be placed in `docs/wireframes/`. They illustrate the che
 - Chaos Engine scheduling random events.
 - Weekly progress reports that can be shared.
 - Journal entries persisted each day with morning and evening text.
+## Future Work
+- Add data persistence with SwiftData.
+- Implement a Chaos Engine that schedules random events.
+- Create shareable reports summarizing weekly progress.
 
 ## Architecture
 The app follows MVVM. Each engine exposes a view model conforming to `ObservableObject` so SwiftUI views stay reactive. Core data types are stored using SwiftData or CoreData. The top-level `CasaVidaOSApp` composes `ArchetypeSelectorView` and `ChessboardView`.

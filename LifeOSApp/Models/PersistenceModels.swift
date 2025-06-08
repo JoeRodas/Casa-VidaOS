@@ -1,6 +1,7 @@
 import Foundation
 
 #if canImport(SwiftData)
+
 import SwiftData
 
 @Model

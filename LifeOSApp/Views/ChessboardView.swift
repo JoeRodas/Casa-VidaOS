@@ -3,6 +3,8 @@ import SwiftUI
 #endif
 
 #if canImport(SwiftUI)
+import SwiftUI
+
 struct ChessboardView: View {
     @Binding var archetype: Archetype
     @StateObject private var viewModel = ChessboardViewModel()
@@ -15,6 +17,15 @@ struct ChessboardView: View {
             Text("Life OS Chessboard")
                 .font(.largeTitle)
                 .padding(.bottom)
+
+
+    @StateObject private var viewModel = ChessboardViewModel()
+
+    var body: some View {
+        VStack {
+            Text("Life OS Chessboard")
+                .font(.largeTitle)
+                .padding()
             LazyVGrid(columns: Array(repeating: GridItem(.flexible()), count: 8), spacing: 2) {
                 ForEach(viewModel.tiles.flatMap { $0 }) { tile in
                     ZStack {
@@ -42,6 +53,9 @@ struct ChessboardView: View {
                                         .foregroundColor(.yellow)
                                         .offset(x: 10, y: 10)
                                 )
+
+                                .background(Color.blue)
+                                .clipShape(Circle())
                         }
                     }
                 }
@@ -52,6 +66,8 @@ struct ChessboardView: View {
 #endif
 
 #if canImport(SwiftUI)
+}
+
 #Preview {
     StateWrapper()
 }
@@ -63,3 +79,6 @@ private struct StateWrapper: View {
     }
 }
 #endif
+
+    ChessboardView()
+}

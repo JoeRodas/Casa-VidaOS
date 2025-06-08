@@ -28,6 +28,17 @@ class WeeklyReportViewModel: ObservableObject {
         let events: [ChaosEvent] = []
         #endif
 
+    private let context: ModelContext
+
+    init(context: ModelContext = DataController.shared.container.mainContext) {
+        self.context = context
+    }
+
+    func generateReport() {
+        let fetchRequest = FetchDescriptor<LifePieceState>()
+        let pieces = (try? context.fetch(fetchRequest)) ?? []
+        let events = (try? context.fetch(FetchDescriptor<ChaosEvent>())) ?? []
+
         var lines: [String] = []
         lines.append("Pieces progress:")
         for piece in pieces {
