@@ -1,3 +1,8 @@
+#if canImport(SwiftUI)
+import SwiftUI
+#endif
+
+#if canImport(SwiftUI)
 import SwiftUI
 
 struct WeeklyReportView: View {
@@ -24,6 +29,10 @@ struct WeeklyReportView: View {
         }
         .padding()
     }
+#endif
+
+#if canImport(SwiftUI)
+
 }
 
 struct ActivityView: UIViewControllerRepresentable {
@@ -37,3 +46,4 @@ struct ActivityView: UIViewControllerRepresentable {
 #Preview {
     WeeklyReportView()
 }
+#endif

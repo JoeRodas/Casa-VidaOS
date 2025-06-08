@@ -1,4 +1,10 @@
 import Foundation
+#if canImport(SwiftData)
+import SwiftData
+#endif
+
+#if canImport(SwiftData)
+
 import SwiftData
 
 @MainActor
@@ -15,3 +21,14 @@ class DataController {
         container = try! ModelContainer(for: schema, configurations: [configuration])
     }
 }
+#else
+/// Placeholder implementation for platforms without SwiftData
+class DataController {
+    static let shared = DataController()
+    let container: Never? = nil
+    init(inMemory: Bool = false) {
+        fatalError("SwiftData not available")
+    }
+}
+#endif
+
