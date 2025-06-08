@@ -47,7 +47,6 @@ struct ChessboardView: View {
                                         .foregroundColor(.yellow)
                                         .offset(x: 10, y: 10)
                                 )
-
                                 .background(Color.blue)
                                 .clipShape(Circle())
                         }
@@ -68,6 +67,5 @@ private struct StateWrapper: View {
     var body: some View {
         ChessboardView(archetype: $archetype)
     }
-
     ChessboardView()
 }

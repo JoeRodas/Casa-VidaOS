@@ -47,5 +47,17 @@ app.get('/api/user/:id', async (req, res) => {
   }
 });
 
+// Journal entry endpoint
+app.post('/api/journal', async (req, res) => {
+  const { userId, text, type } = req.body; // type = 'morning' or 'evening'
+  try {
+    await pool.query('INSERT INTO journal(user_id, type, text) VALUES($1,$2,$3)', [userId, type, text]);
+    res.status(201).json({ status: 'ok' });
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ error: 'Database error' });
+  }
+});
+
 const port = process.env.PORT || 3000;
 app.listen(port, () => console.log(`Server running on ${port}`));

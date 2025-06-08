@@ -34,3 +34,19 @@ class ChaosEvent {
         self.resolved = resolved
     }
 }
+
+@Model
+class JournalEntry {
+    var id: UUID
+    var date: Date
+    var morningText: String?
+    var eveningText: String?
+
+    init(id: UUID = UUID(), date: Date = .now, morningText: String? = nil, eveningText: String? = nil) {
+        self.id = id
+        self.date = date
+        self.morningText = morningText
+        self.eveningText = eveningText
+    }
+}
+
