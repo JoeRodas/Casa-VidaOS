@@ -8,9 +8,6 @@ import SwiftUI
 import SwiftData
 #endif
 
-import SwiftUI
-import SwiftData
-
 @main
 struct CasaVidaOSApp: App {
     @State private var archetype: Archetype = .franklin
@@ -28,24 +25,20 @@ struct CasaVidaOSApp: App {
                     NavigationLink("Journal") {
                         JournalView()
                     }
+                    NavigationLink("Daily Quote") {
+                        DailyQuoteView()
+                    }
+                    NavigationLink("Mood Tracker") {
+                        MoodTrackerView()
+                    }
                 }
                 .navigationTitle("Casa-VidaOS")
-                .onAppear {
-                    chaosEngine.start()
-                }
-                .onDisappear {
-                    chaosEngine.stop()
-                }
+                .onAppear { chaosEngine.start() }
+                .onDisappear { chaosEngine.stop() }
             }
 #if canImport(SwiftData)
             .modelContainer(DataController.shared.container)
 #endif
-
-            .modelContainer(DataController.shared.container)
-                    ChessboardView()
-                }
-                .navigationTitle("Casa-VidaOS")
-            }
         }
     }
 }

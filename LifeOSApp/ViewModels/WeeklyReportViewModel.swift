@@ -6,28 +6,6 @@ import SwiftData
 @MainActor
 class WeeklyReportViewModel: ObservableObject {
     @Published var summary: String = ""
-#if canImport(SwiftData)
-    private let context: ModelContext
-#endif
-
-    #if canImport(SwiftData)
-    init(context: ModelContext = DataController.shared.container.mainContext) {
-        self.context = context
-    }
-    #else
-    init() {}
-    #endif
-
-    func generateReport() {
-        #if canImport(SwiftData)
-        let fetchRequest = FetchDescriptor<LifePieceState>()
-        let pieces = (try? context.fetch(fetchRequest)) ?? []
-        let events = (try? context.fetch(FetchDescriptor<ChaosEvent>())) ?? []
-        #else
-        let pieces: [LifePieceState] = []
-        let events: [ChaosEvent] = []
-        #endif
-
     private let context: ModelContext
 
     init(context: ModelContext = DataController.shared.container.mainContext) {
