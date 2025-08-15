@@ -31,6 +31,7 @@ struct CasaVidaOSApp: App {
                     NavigationLink("Mood Tracker") {
                         MoodTrackerView()
                     }
+
                 }
                 .navigationTitle("Casa-VidaOS")
                 .onAppear { chaosEngine.start() }
