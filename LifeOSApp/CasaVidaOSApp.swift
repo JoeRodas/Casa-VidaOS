@@ -28,6 +28,10 @@ struct CasaVidaOSApp: App {
                     NavigationLink("Daily Quote") {
                         DailyQuoteView()
                     }
+                    NavigationLink("Mood Tracker") {
+                        MoodTrackerView()
+                    }
+
                 }
                 .navigationTitle("Casa-VidaOS")
                 .onAppear { chaosEngine.start() }
